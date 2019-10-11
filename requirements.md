@@ -62,8 +62,6 @@ Our Focal List app should allow users to create their own list of tasks that are
 ## Non-Functional Requirements (301 & 401 only)
 Non-functional requirements are requirements that are not directly related to the functionality of the application but still important to the app.
 
-#### Examples include:
-
 - `Security` - Our app needs account security in order to prevent other people from accessing sensitive information as well as modify the tasks. We need to prevent access for users not sign up yet to access the dashboard until they signed up with their information. We also need to prevent other users from accessing our own account by verifying if the current logged in user is the same as the user that they are trying to view.
 
 - `Usability` - Our app needs to have a simple and intuitive UI so that people from all ages and technical backgrounds can use the app with ease. Our app should make adding tasks be a quick and easy process to improve the user experience. The reminders sent should be reliable in that users should receive their reminders at the time that they specified every time.  
