@@ -76,3 +76,9 @@ As a busy mother of three, I want my children who have cell phones to receive te
 * Ensure that account setup takes less than 2 minutes.
 * Ensure that adding a task is a quick and simple process. 
 
+# Wireframes for App
+Wireframes can be viewed within our public [Trello Board](https://trello.com/b/9v2P4pvL/team-focalpoint). 
+
+# Domain Modeling and Database-Entity-Relationship Diagram
+Domain modeling and a Database-Entity-Relationship Diagram can be seen on our [Trello Board](https://trello.com/b/9v2P4pvL/team-focalpoint).
+
