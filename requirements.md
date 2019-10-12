@@ -49,7 +49,6 @@ Our Focal List app should allow users to create their own list of tasks that are
 - Allow user to add attachments to task such as file link
 - Allow user to configure time delay that they want before a task is due for the reminder to be sent. 
 - Have user verify their phone number perhaps by sending back a verification code to server. 
-- 
 
 ## Functional Requirements
 ###### List the functionality of your product. This will consist of tasks such as the following:
