@@ -8,11 +8,11 @@ Our Focal List app should allow users to create their own list of tasks that are
 
 ###### What pain point does this project solve?
 
-
+This project assist busy people of all ages to keep track of all the things that they have to do during the day so that they do not forget about them and maintain their productivity.   
 
 ###### Why should we care about your product?
 
-
+Our product provides a user-friendly and modern way to help organize a user's daily activities and prevent them from forgetting certain ones.  
 
 ## Scope (In/Out)
 #### IN - What will your product do
