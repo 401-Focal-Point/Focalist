@@ -13,11 +13,13 @@
             Title<input type="text" name="title">
             Note<input type="text" name="note">
             Time<input type="datetime-local" name="time">
-            <input type="text" name="offset" id="offset">
+            <input type="hidden" name="offset" id="offset">
             <input type="submit" />
         </form>
     </div>
 
-    
+    <footer>
+        <section th:replace="fragments/footer :: footer"></section>
+    </footer>
 </body>
 </html>

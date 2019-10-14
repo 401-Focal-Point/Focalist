@@ -1,6 +1,7 @@
-'use strict'
+'use strict';
 //gets the local
-window.onLoad function() {
+(function() {
     var offset = new Date().getTimezoneOffset()/60;
     $('#offset').val(offset);
-}
+})();
+
