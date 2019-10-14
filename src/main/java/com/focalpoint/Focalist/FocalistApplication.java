@@ -15,7 +15,6 @@ import java.util.TimeZone;
 public class FocalistApplication {
 
 	public static void main(String[] args) {
-
         SpringApplication.run(FocalistApplication.class, args);
     }
 
