@@ -82,3 +82,7 @@ Wireframes can be viewed within our public [Trello Board](https://trello.com/b/9
 ## Domain Modeling and Database-Entity-Relationship Diagram
 Domain modeling and a Database-Entity-Relationship Diagram can be seen on our [Trello Board](https://trello.com/b/9v2P4pvL/team-focalpoint).
 
+### References
+
+- [Spring Boot - How to send sms using Twilio API (2019)](https://www.youtube.com/watch?v=OuBttmaPlhM)
+
