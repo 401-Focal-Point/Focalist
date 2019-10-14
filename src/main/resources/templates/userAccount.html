@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <div th:replace="fragments/csshead :: css"></div>
+    <title>User Account</title>
 </head>
 <body>
     <div class="container">
         <div th:replace="fragments/nav :: nav"></div>
 
-        <h1>Your Account</h1>
-        <form action="api/task" method="POST">
+        <h2>Add a Reminder</h2>
+        <form action="/api/task" method="POST">
             Title<input type="text" name="title">
             Note<input type="text" name="note">
             Time<input type="datetime-local" name="time">
