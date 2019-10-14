@@ -6,9 +6,11 @@
 </head>
 <body>
     <div th:replace="fragments/nav :: nav"></div>
+    <h1>Welcome to A Modern Way of Receiving Reminders!</h1>
+    <div th:if="${email}">
+
 
     <div th:unless="${email}">
-        <h1>Welcome to A Modern Way of Receiving Reminders!</h1>
         <h3>Please signup or login to add reminders and manage your account.</h3>
         <p>FocaList is here for you, to send you reminder text messages at times of your choosing,
             so that you never forget those important things again</p>

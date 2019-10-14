@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="fragments/nav :: nav"></div>
+
+        <h1>Your Account</h1>
+        <form action="api/task" method="POST">
+            Title<input type="text" name="title">
+            Note<input type="text" name="note">
+            Time<input type="datetime-local" name="time">
+            <input type="hidden" name="offset" id="offset">
+            <input type="submit" />
+        </form>
+    </div>
+
+</body>
+</html>
