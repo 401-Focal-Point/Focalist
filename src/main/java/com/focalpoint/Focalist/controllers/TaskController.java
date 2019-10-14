@@ -23,8 +23,8 @@ public class TaskController {
 
     // TODO: figure out how to store date and timezone
     @PostMapping("/api/task")
-    public RedirectView addTask(String title, String note, String time, String offset, String username) {
-        ApplicationUser currentUser = applicationUserRepository.findByUsername(username);
+    public RedirectView addTask(String title, String note, String time, String offset, Principal p) {
+        ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
         time = time + "+0" + offset + ":00";
         OffsetDateTime taskTime = OffsetDateTime.parse(time);
         Task newTask = new Task(title, note, taskTime, currentUser);
