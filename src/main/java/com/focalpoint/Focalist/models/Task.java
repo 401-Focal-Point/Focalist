@@ -3,6 +3,7 @@ package com.focalpoint.Focalist.models;
 import org.joda.time.DateTimeZone;
 
 import javax.persistence.*;
+import java.time.OffsetDateTime;
 import java.util.Date;
 
 @Entity
@@ -12,16 +13,16 @@ public class Task {
     long id;
     String title;
     String note;
-    Date time;
+    OffsetDateTime time;
     @ManyToOne
     ApplicationUser applicationUser;
 
     public Task() {}
 
-    public Task(String title, String note, String time, String timeZone, ApplicationUser applicationUser) {
+    public Task(String title, String note, OffsetDateTime time, ApplicationUser applicationUser) {
         this.title = title;
         this.note = note;
-        this.time = new Date(time);
+        this.time = time;
         this.applicationUser = applicationUser;
     }
 
@@ -37,7 +38,7 @@ public class Task {
         return note;
     }
 
-    public Date getTime() {
+    public OffsetDateTime getTime() {
         return time;
     }
 

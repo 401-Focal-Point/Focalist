@@ -63,5 +63,11 @@ public class UserController {
         return "login";
     }
 
+    // Go to userAccount page
+    @GetMapping("/userAccount")
+    public String getUserAccount() {
+        return "userAccount";
+    }
+
 
 }
