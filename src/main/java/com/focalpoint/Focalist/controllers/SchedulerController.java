@@ -21,12 +21,15 @@ public class SchedulerController {
 
     @PostMapping("/api/schedule")
     public void scheduleMessage () {
-        List<Task> tasks = taskRepository.findAllOrderByTime();
-        List<Task> taskToBeSent = new ArrayList<>();
-        ZoneOffset zoneOffSet= ZoneOffset.of("+00:00");
-//        OffsetDateTime currentServerTime = new OffsetDateTime(LocalDateTime.now(), zoneOffSet);
+//        List<Task> tasks = taskRepository.findAllOrderByTime();
+//        List<Task> taskToBeSent = new ArrayList<>();
+//        ZoneOffset zoneOffSet= ZoneOffset.of("Z");
+//        OffsetDateTime currentServerTime = OffsetDateTime.now();
+//        OffsetDateTime currentServerTimePlusClockInterval =
 //        for (int i = 0; i < tasks.size(); i++) {
-//            if (tasks.get(i)
-//        }
+////            if (tasks.get(i).getTime().isAfter(currentServerTime)) {
+////
+////            }
+////        }
     }
 }

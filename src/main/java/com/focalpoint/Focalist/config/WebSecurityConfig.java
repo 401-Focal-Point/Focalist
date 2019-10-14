@@ -1,5 +1,7 @@
 package com.focalpoint.Focalist.config;
 
+// Starting code referenced from https://spring.io/guides/gs/securing-web/
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,17 +26,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return bCryptPasswordEncoder;
     }
 
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+    @Override
+    protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(final HttpSecurity http) throws Exception {
+
         http
-            .csrf().disable()
-            .cors().disable()
-            .authorizeRequests()
-            .anyRequest().permitAll();
+                .cors().disable()
+                .csrf().disable()
+                .authorizeRequests()
+                // users should be able to see the following, but note that basic user will want to also add any static resources:
+                .antMatchers("/", "/signup", "/login", "/*.css").permitAll()
+                // if not signed in, user will be redirected to the sign-in page:
+                .anyRequest().authenticated()
+                .and()
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/")
+                .and()
+                    .logout()
+                    .logoutSuccessUrl("/");
     }
 
     @Override

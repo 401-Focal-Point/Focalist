@@ -9,16 +9,17 @@
     <!-- if person is logged in -->
     <nav th:if="${email}">
         <a href="/">Home</a>
-        <a href="/account">See Your Account</a>
+        <a href="/userAccount">See Your Account</a>
         <a href="/logout">Logout</a>
+        //TODO change to showing persons first name
         <h1>Hello, [[${email}]]!</h1>
     </nav>
 
     <!-- if person is new or needs to login -->
     <nav th:unless="${email}">
-        <a href="/">home</a>
-        <a href="/login">login</a>
-        <a href="/signup">signup</a>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
     </nav>
 </section>
 
