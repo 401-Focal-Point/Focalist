@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
+import java.util.Date;
 import java.time.OffsetDateTime;
+
 
 @Controller
 public class TaskController {
@@ -26,8 +28,12 @@ public class TaskController {
     public RedirectView addTask(String title, String note, String time, String offset, Principal p) {
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
         time = time + "+0" + offset + ":00";
+        System.out.println(time);
         OffsetDateTime taskTime = OffsetDateTime.parse(time);
-        Task newTask = new Task(title, note, taskTime, currentUser);
+        System.out.println(taskTime);
+        Date UtcTime = Date.from(taskTime.toInstant());
+        System.out.println(UtcTime);
+        Task newTask = new Task(title, note, UtcTime, currentUser);
         taskRepository.save(newTask);
         return new RedirectView("/userAccount");
     }
