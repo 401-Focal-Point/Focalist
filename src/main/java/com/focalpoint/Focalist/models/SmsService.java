@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 // Defines a general service that is independent of the sms provider
 @org.springframework.stereotype.Service
-public class Service {
+public class SmsService {
     private final SmsSender smsSender;
 
     @Autowired
-    public Service(@Qualifier("twilio") TwilioSmsSender smsSender) {
+    public SmsService(@Qualifier("twilio") TwilioSmsSender smsSender) {
         this.smsSender = smsSender;
     }
 

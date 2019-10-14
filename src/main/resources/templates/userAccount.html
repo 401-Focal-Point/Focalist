@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <div th:replace="fragments/csshead :: css"></div>
-    <title>User Account</title>
+    <title>Title</title>
 </head>
 <body>
     <div class="container">
         <div th:replace="fragments/nav :: nav"></div>
 
-        <!-- List of Logged 
-
-        <!-- Add Reminder -->
-        <h2>Add a Reminder</h2>
-        <form action="/api/task" method="POST">
+        <h1>Your Account</h1>
+        <form action="api/task" method="POST">
             Title<input type="text" name="title">
             Note<input type="text" name="note">
             Time<input type="datetime-local" name="time">
@@ -22,5 +19,8 @@
         </form>
     </div>
 
+    <footer>
+        <section th:replace="fragments/footer :: footer"></section>
+    </footer>
 </body>
 </html>
