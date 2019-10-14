@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nav Fragment</title>
+</head>
+<body>
+<section th:fragment="nav">
+    <!-- if person is logged in -->
+    <nav th:if="${email}">
+        <a href="/">Home</a>
+        <a href="/account">See Your Account</a>
+        <a href="/logout">Logout</a>
+        // ToDo: change to showing persons first name
+        <h1>Hello, [[${email}]]!</h1>
+    </nav>
+
+    <!-- if person is new or needs to login -->
+    <nav th:unless="${email}">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+    </nav>
+</section>
+
+</body>
+</html>

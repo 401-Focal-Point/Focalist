@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<div class="container">
+    <h1>Log In to Your Account</h1>
+    <div th:if="${param.error}">
+        There was an error! Please try your email and password again.
+    </div>
+    <form action="/login" method="POST">
+        Email<input name="username" />
+        Password<input name="password" type="password" />
+        <input type="submit" />
+    </form>
+</div>
+
+</body>
+</html>
