@@ -10,9 +10,9 @@ import java.security.Principal;
 public class HomeController {
     @GetMapping("/")
     public String getHome(Principal p, Model m) {
-//        if (p != null) {
-//            m.addAttribute("email", p.getName());
-//        }
+        if (p != null) {
+            m.addAttribute("email", p.getName());
+        }
         return "home";
     }
 }
