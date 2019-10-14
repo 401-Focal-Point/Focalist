@@ -9,7 +9,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -31,6 +33,7 @@ public class UserController {
         return "signup";
     }
 
+    // Receives data from form that gets new user data
     @PostMapping("/signup")
     public RedirectView addUser(String firstName, String lastName, String phoneNumber, String password, String email) {
 
@@ -53,4 +56,12 @@ public class UserController {
         // send user back to homepage after setting up account
         return new RedirectView("/");
     }
+
+    // Go to login page
+    @GetMapping("/login")
+    public String getLoginPage() {
+        return "login";
+    }
+
+
 }
