@@ -21,9 +21,9 @@ public class TaskController {
 
     // TODO: figure out how to store date and timezone
     @PostMapping("api/task")
-    public void addTask(String title, String note, String date, String timeZone, Principal p) {
+    public void addTask(String title, String note, String time, String timeZone, Principal p) {
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
-        Task newTask = new Task(title, note, date, timeZone, currentUser);
+        Task newTask = new Task(title, note, time, timeZone, currentUser);
         taskRepository.save(newTask);
     }
 }
