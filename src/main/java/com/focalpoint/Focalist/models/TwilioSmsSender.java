@@ -7,15 +7,12 @@ import com.twilio.type.PhoneNumber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+// Defines the Twilio Service that is used to send text messages
 @Service("twilio")
 public class TwilioSmsSender implements SmsSender {
 
     @Autowired
     TwilioConfiguration twilioConfiguration;
-
-//    public TwilioSmsSender(TwilioConfiguration twilioConfiguration) {
-//        this.twilioConfiguration = twilioConfiguration;
-//    }
 
     @Override
     public void sendSms(SmsRequest smsRequest) {
