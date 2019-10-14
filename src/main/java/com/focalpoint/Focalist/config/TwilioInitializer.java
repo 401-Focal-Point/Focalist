@@ -7,10 +7,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TwilioInitializer {
 
-    @Autowired
     TwilioConfiguration twilioConfiguration;
 
-    public TwilioInitializer() {
+    @Autowired
+    public TwilioInitializer(TwilioConfiguration twilioConfiguration) {
+        this.twilioConfiguration = twilioConfiguration;
         // establish connection to Twilio API for our account
         Twilio.init(
             twilioConfiguration.getAccountSid(),
