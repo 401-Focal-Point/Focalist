@@ -17,6 +17,7 @@ public class ApplicationUser implements UserDetails {
     String phoneNumber;
     String password;
     String email;
+    String username;
 
     @OneToMany(mappedBy = "applicationUser")
     List<Task> tasks;
@@ -28,6 +29,7 @@ public class ApplicationUser implements UserDetails {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.password = password;
+        this.username = email;
         this.email = email;
     }
 
