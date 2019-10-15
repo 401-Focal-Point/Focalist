@@ -29,7 +29,7 @@ public class SchedulerController {
 //        make an ordered list or all tasks
         List<Task> tasks = taskRepository.OrderByUtcTime();
         Date currentServerTime = DateTime.now().toDate();
-        Date currentServerTimePlusClockProcessInterval = DateTime.now().plusMinutes(10).toDate();
+        Date currentServerTimePlusClockProcessInterval = DateTime.now().plusMinutes(430).toDate();
         for (Task task: tasks) {
             Date taskTime = task.getUtcTime();
             if (taskTime.after(currentServerTime) && taskTime.before(currentServerTimePlusClockProcessInterval)) {
