@@ -27,9 +27,10 @@ public class TaskController {
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
         DateTime taskTime = DateTime.parse(time);
         int offsetHours = Integer.parseInt(offset);
-        taskTime = taskTime.plusHours(offsetHours);
-        Date taskUtcTime = taskTime.toDate();
-        Task newTask = new Task(title, note, taskUtcTime, offsetHours, currentUser);
+        DateTime taskTimeUtc = taskTime.plusHours(offsetHours);
+        Date taskUtcTime = taskTimeUtc.toDate();
+        Date taskTimeLocal = taskTime.toDate();
+        Task newTask = new Task(title, note, taskUtcTime, taskTimeLocal, currentUser);
         taskRepository.save(newTask);
         return new RedirectView("/userAccount");
     }

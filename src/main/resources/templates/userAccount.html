@@ -12,7 +12,7 @@
         <h2>Queued Reminder Messages</h2>
             <th:block th:each="task : ${user.tasks}">
                 <p th:text="${task.title}"></p>
-                <p th:text="${task.time}"></p>
+                <p th:text="${task.localTime}"></p>
                 <p th:text="${task.note}"></p>
             </th:block>
 
