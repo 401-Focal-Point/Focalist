@@ -12,8 +12,6 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
 import java.util.Date;
-import java.time.OffsetDateTime;
-
 
 @Controller
 public class TaskController {
@@ -24,23 +22,15 @@ public class TaskController {
     @Autowired
     TaskRepository taskRepository;
 
-    // TODO: figure out how to store date and timezone
     @PostMapping("/api/task")
     public RedirectView addTask(String title, String note, String time, String offset, Principal p) {
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
-//        time = time + "+0" + offset + ":00";
-        System.out.println(time);
         DateTime taskTime = DateTime.parse(time);
-        System.out.println(taskTime);
         int offsetHours = Integer.parseInt(offset);
-        System.out.println(offsetHours);
-        taskTime = taskTime.plusHours(offsetHours);
-        System.out.println(taskTime);
-//        DateTime UtcTime = DateTime.(taskTime.toInstant());
-//        System.out.println(UtcTime);
-        Date taskUtcTime = taskTime.toDate();
-        System.out.println(taskUtcTime);
-        Task newTask = new Task(title, note, taskUtcTime, currentUser);
+        DateTime taskTimeUtc = taskTime.plusHours(offsetHours);
+        Date taskUtcTime = taskTimeUtc.toDate();
+        Date taskTimeLocal = taskTime.toDate();
+        Task newTask = new Task(title, note, taskUtcTime, taskTimeLocal, currentUser);
         taskRepository.save(newTask);
         return new RedirectView("/userAccount");
     }
