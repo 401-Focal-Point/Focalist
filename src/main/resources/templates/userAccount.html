@@ -9,7 +9,14 @@
     <div class="container">
         <div th:replace="fragments/nav :: nav"></div>
 
-        <h1>Your Account</h1>
+        <h2>Queued Reminder Messages</h2>
+            <th:block th:each="task : ${user.tasks}">
+                <p th:text="${task.title}"></p>
+                <p th:text="${task.time}"></p>
+                <p th:text="${task.note}"></p>
+            </th:block>
+
+        <h2>Make a Reminder Message</h2>
         <form action="api/task" method="POST">
             Title<input type="text" name="title">
             Note<input type="text" name="note">
