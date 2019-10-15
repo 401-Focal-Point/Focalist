@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 // users should be able to see the following
-                .antMatchers("/", "/signup", "/login", "/*.css", "/*.js").permitAll()
+                .antMatchers("/", "/signup", "/login", "/*.css", "/*.js","/api/schedule").permitAll()
                 // if not signed in, user will be redirected to the sign-in page:
                 .anyRequest().authenticated()
                 .and()

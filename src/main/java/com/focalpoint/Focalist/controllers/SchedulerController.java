@@ -24,18 +24,20 @@ public class SchedulerController {
     SmsService smsService;
 
     @GetMapping("/api/schedule")
-    public void scheduleMessage (Principal p) {
+    public void scheduleMessage () {
         System.out.println("got in");
-        ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
-        List<Task> tasks = taskRepository.findByApplicationUserIdOrderByUtcTime(currentUser.getId());
+//        make an ordered list or all tasks
+        List<Task> tasks = taskRepository.OrderByUtcTime();
         Date currentServerTime = DateTime.now().toDate();
         Date currentServerTimePlusClockProcessInterval = DateTime.now().plusMinutes(10).toDate();
         for (Task task: tasks) {
             Date taskTime = task.getUtcTime();
             if (taskTime.after(currentServerTime) && taskTime.before(currentServerTimePlusClockProcessInterval)) {
                 System.out.println(task.toString());
-                SmsRequest newMessage = new SmsRequest(currentUser.getPhoneNumber(), task.toString());
+                SmsRequest newMessage = new SmsRequest(task.getApplicationUser().getPhoneNumber(), task.toString());
                 smsService.sendSms(newMessage);
+            } else {
+                break;
             }
         }
     }
