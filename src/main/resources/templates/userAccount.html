@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div th:replace="fragments/csshead :: css"></div>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div th:replace="fragments/nav :: nav"></div>
+
+        <h2>Queued Reminder Messages</h2>
+            <th:block th:each="task : ${user.tasks}">
+                <p th:text="${task.title}"></p>
+                <p th:text="${task.localTime}"></p>
+                <p th:text="${task.note}"></p>
+            </th:block>
+
+        <h2>Make a Reminder Message</h2>
+        <form action="api/task" method="POST">
+            Title<input type="text" name="title">
+            Note<input type="text" name="note">
+            Time<input type="datetime-local" name="time">
+            <input type="hidden" name="offset" id="offset">
+            <input type="submit" />
+        </form>
+    </div>
+
+    <footer>
+        <section th:replace="fragments/footer :: footer"></section>
+    </footer>
+</body>
+</html>

@@ -63,5 +63,15 @@ public class UserController {
         return "login";
     }
 
+    // Go to userAccount page
+    @GetMapping("/userAccount")
+    public String getUserAccount(Principal p, Model m) {
+        if (p != null) {
+            m.addAttribute("email", p.getName());
+        }
+        m.addAttribute("user", applicationUserRepository.findByUsername(p.getName()));
+        return "userAccount";
+    }
+
 
 }
