@@ -28,19 +28,18 @@ public class SchedulerController {
     public String scheduleMessage (Model m) {
         System.out.println("got in");
 //        make an ordered list or all tasks
-        List<Task> tasks = taskRepository.OrderByUtcTime();
+        List<Task> tasks = taskRepository.findAllOrderByUtcTime();
         Date currentServerTime = DateTime.now().toDate();
         m.addAttribute("currentServerTime", currentServerTime);
         Date currentServerTimePlusClockProcessInterval = DateTime.now().plusMinutes(10).toDate();
         m.addAttribute("currentServerTimePlus10Minutes", currentServerTimePlusClockProcessInterval);
+        m.addAttribute("tasks", tasks);
         for (Task task: tasks) {
             Date taskTime = task.getUtcTime();
             if (taskTime.after(currentServerTime) && taskTime.before(currentServerTimePlusClockProcessInterval)) {
                 System.out.println(task.toString());
                 SmsRequest newMessage = new SmsRequest(task.getApplicationUser().getPhoneNumber(), task.toString());
                 smsService.sendSms(newMessage);
-            } else {
-                break;
             }
         }
         return "test";

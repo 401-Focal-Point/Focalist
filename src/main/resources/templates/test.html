@@ -7,5 +7,8 @@
 <body>
 <h1>This is current server time: [[${currentServerTime}]]</h1>
 <h1>THis is current server time plus 10 minutes: [[${currentServerTimePlus10Minutes}]]</h1>
+<ul>
+    <li th:each="task: ${tasks}">[[${task.utcTime}]] - [[${task.title}]]</li>
+</ul>
 </body>
 </html>
