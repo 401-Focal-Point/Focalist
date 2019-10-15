@@ -8,20 +8,46 @@
 <section th:fragment="nav">
     <!-- if person is logged in -->
     <nav th:if="${email}">
-        <a href="/">Home</a>
-        <a href="/userAccount">See Your Account</a>
-        <a href="/logout">Logout</a>
+        <ul class="nav nav-pills mb-3" id="pills-tab-if-email" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="/" role="tab" aria-controls="home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="/userAccount" role="tab" aria-controls="userAccount" aria-selected="false">See Your Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="/logout" role="tab" aria-controls="pills-contact" aria-selected="false">Logout</a>
+            </li>
+        </ul>
+<!--        <a href="/">Home</a>-->
+<!--        <a href="/userAccount">See Your Account</a>-->
+<!--        <a href="/logout">Logout</a>-->
         //TODO change to showing persons first name
         <h1>Hello, [[${email}]]!</h1>
     </nav>
 
     <!-- if person is new or needs to login -->
     <nav th:unless="${email}">
-        <a href="/">Home</a>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
+        <ul class="nav nav-pills nav-fill" id="pills-tab-if-no-email " role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab-if-no-email"  href="/" role="tab" >Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="login-if-no-email"  href="/login" role="tab">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="signup-if-no-email"  href="/signup" role="tab">Signup</a>
+            </li>
+        </ul>
     </nav>
 </section>
+
+
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+</div>
 
 </body>
 </html>

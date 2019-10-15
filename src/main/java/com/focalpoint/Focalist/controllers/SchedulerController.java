@@ -12,7 +12,7 @@ import java.security.Principal;
 import java.util.*;
 
 @Controller
-public class SchedulerController {
+public class   SchedulerController {
 
     @Autowired
     TaskRepository taskRepository;
