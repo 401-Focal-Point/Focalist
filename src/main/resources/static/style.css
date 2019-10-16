@@ -17,3 +17,13 @@ body {
   max-width: 30%;
   height: auto;
 }
+
+#nav-span{
+    color: black;
+    font-weight:bold;
+}
+
+#nav-span a{
+    color: #589BF5;
+    font-weight:bold;
+}
