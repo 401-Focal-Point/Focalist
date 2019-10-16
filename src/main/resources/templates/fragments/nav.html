@@ -6,22 +6,23 @@
 </head>
 <body>
 <section th:fragment="nav">
-    <!-- if person is logged in -->
-    <nav th:if="${email}">
-        <a href="/">Home</a>
-        <a href="/userAccount">See Your Account</a>
-        <a href="/logout">Logout</a>
-        //TODO change to showing persons first name
-        <h1>Hello, [[${email}]]!</h1>
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="/"><img id="logo" src="./assets/logo.png"></a>
+            <span th:if="${email}" class="navbar-text">
+                Hello, [[${email}]]!
+            </span>
+        </div>
     </nav>
+
+<!--        //TODO change to showing persons first name-->
+<!--        <h1></h1>-->
+
+
 
     <!-- if person is new or needs to login -->
-    <nav th:unless="${email}">
-        <a href="/">Home</a>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
+    <nav >
+
     </nav>
 </section>
-
 </body>
 </html>
