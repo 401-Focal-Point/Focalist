@@ -6,24 +6,32 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <div th:replace="fragments/nav :: nav"></div>
         <div class="row">
             <!-- Form to submit new message -->
-            <div class="col-sm" id="submitMessage">
+
+
+            <div class="col-sm home" id="submitMessage">
                 <h2>Add Reminder Message</h2>
                 <form action="api/task" method="POST">
-                    Title<input type="text" name="title">
-                    Note<input type="text" name="note">
-                    Time<input type="datetime-local" name="time">
-                    <input type="hidden" name="offset" id="offset">
-                    <input type="submit" />
+                    <div class="form-group">
+                        <input type="text" name="title" placeholder="Message Title"
+                               class="form-control form-control-lg my-2">
+                        <input type="text" name="note" placeholder="Note"
+                               class="form-control form-control-lg my-2">
+                        <input type="datetime-local" name="time" placeholder="Reminder Time"
+                               class="form-control form-control-lg my-2">
+                        <input type="hidden" name="offset" id="offset"
+                               class="form-control form-control-lg my-2">
+                        <input type="submit" value="Submit"
+                               class="btn btn-outline-light btn-block my-2" />
+                    </div>
                 </form>
-
             </div>
             <!-- Show Messages the User has Submitted -->
             <div class="col-sm" id="scheduledMessages">
-                <h2>Scheduled Messages</h2>
+                <h2><span class="theme">Reminder Messages</span> Currently Scheduled </h2>
                 <!-- starting code for collapsible from: https://getbootstrap.com/docs/4.3/components/collapse/ -->
                 <div class="accordion" id="accordionMessage" th:each="task : ${user.tasks}">
                     <div class="card">
