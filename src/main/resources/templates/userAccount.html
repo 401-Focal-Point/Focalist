@@ -7,11 +7,9 @@
 </head>
 <body>
     <div class="container">
-        <div th:replace="fragments/nav :: nav"></div>
-        <div class="row">
+        <section th:replace="fragments/nav :: nav"></section>
+    <div class="row">
             <!-- Form to submit new message -->
-
-
             <div class="col-sm home" id="submitMessage">
                 <h2>Add Reminder Message</h2>
                 <form action="api/task" method="POST">
