@@ -73,10 +73,8 @@ public class UserController {
     // Go to userAccount page
     @GetMapping("/userAccount")
     public String getUserAccount(Principal p, Model m) {
-        if (p != null) {
-            m.addAttribute("email", p.getName());
-        }
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
+        m.addAttribute("name", currentUser.getFirstName());
         m.addAttribute("user", currentUser);
 
         // sort messages by time in displayed messages
