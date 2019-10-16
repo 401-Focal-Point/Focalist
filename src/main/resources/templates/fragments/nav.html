@@ -6,24 +6,8 @@
 </head>
 <body>
 <section th:fragment="nav">
-    <nav class="navbar navbar-dark" style="background-color: #589BF5">
-        <a class="navbar-brand" href="/">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-
-                <li class="nav-item">
-                    <a th:unless="${email}" class="nav-link" href="/signup">Signup</a>
-                    <a th:if="${email}" class="nav-link" href="/userAccount">See Your Account</a>
-                </li>
-
-                <li  class="nav-item">
-                    <a th:unless="${email}" class="nav-link" href="/login">Signin</a>
-                    <a th:if="${email}" class="nav-item nav-link" href="/logout">Logout</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="/"><img id="logo" src="./assets/logo.png"></a>
             <span th:if="${email}" class="navbar-text">
                 Hello, [[${email}]]!
             </span>
@@ -32,6 +16,7 @@
 
 <!--        //TODO change to showing persons first name-->
 <!--        <h1></h1>-->
+
 
 
     <!-- if person is new or needs to login -->
