@@ -17,19 +17,29 @@ public class Task {
     String note;
     Date utcTime;
     Date localTime;
-//    int offsetHours;
+    boolean completed;
+
     @ManyToOne
     ApplicationUser applicationUser;
 
     public Task() {}
+
+    public boolean isCompleted() {
+        return completed;
+    }
 
     public Task(String title, String note, Date UtcTime, Date localTime, ApplicationUser applicationUser) {
         this.title = title;
         this.note = note;
         this.utcTime = UtcTime;
         this.localTime = localTime;
-//        this.offsetHours = offsetHours;
         this.applicationUser = applicationUser;
+        this.completed = false;
+
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
     public long getId() {
@@ -51,10 +61,6 @@ public class Task {
     public Date getLocalTime() {
         return this.localTime;
     }
-
-//    public int getOffset() {
-//        return this.offsetHours;
-//    }
 
     public ApplicationUser getApplicationUser() {
         return applicationUser;
