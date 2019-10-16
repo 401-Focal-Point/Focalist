@@ -61,7 +61,7 @@ public class UserController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         // send user back to homepage after setting up account
-        return new RedirectView("/");
+        return new RedirectView("/userAccount");
     }
 
     // Go to login page
