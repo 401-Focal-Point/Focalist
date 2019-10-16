@@ -2,6 +2,7 @@ package com.focalpoint.Focalist.controllers;
 
 import com.focalpoint.Focalist.models.ApplicationUser;
 import com.focalpoint.Focalist.models.ApplicationUserRepository;
+import com.focalpoint.Focalist.models.Task;
 import com.twilio.rest.api.v2010.account.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,6 +18,8 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -35,7 +38,11 @@ public class UserController {
 
     // Receives data from form that gets new user data
     @PostMapping("/signup")
-    public RedirectView addUser(String firstName, String lastName, String phoneNumber, String password, String email) {
+    public RedirectView addUser(String firstName,
+                                String lastName,
+                                String phoneNumber,
+                                String password,
+                                String email) {
 
         // create newUser and salt & hash password
         ApplicationUser newUser = new ApplicationUser(firstName,
@@ -69,7 +76,15 @@ public class UserController {
         if (p != null) {
             m.addAttribute("email", p.getName());
         }
-        m.addAttribute("user", applicationUserRepository.findByUsername(p.getName()));
+        ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
+        m.addAttribute("user", currentUser);
+
+        // sort messages by time in displayed messages
+        List<Task> userTasks = currentUser.getTasks();
+        userTasks.sort(Comparator.comparing(Task::getUtcTime));
+        m.addAttribute("sortedMessages", userTasks);
+
+
         return "userAccount";
     }
 
