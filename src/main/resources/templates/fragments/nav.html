@@ -6,48 +6,38 @@
 </head>
 <body>
 <section th:fragment="nav">
-    <!-- if person is logged in -->
-    <nav th:if="${email}">
-        <ul class="nav nav-pills mb-3" id="pills-tab-if-email" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="/"  aria-controls="home" aria-selected="true">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="/userAccount" aria-controls="userAccount" aria-selected="false">See Your Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="/logout" aria-controls="pills-contact" aria-selected="false">Logout</a>
-            </li>
-        </ul>
-<!--        <a href="/">Home</a>-->
-<!--        <a href="/userAccount">See Your Account</a>-->
-<!--        <a href="/logout">Logout</a>-->
-        //TODO change to showing persons first name
-        <h1>Hello, [[${email}]]!</h1>
+    <nav class="navbar navbar-dark" style="background-color: #589BF5">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a th:unless="${email}" class="nav-link" href="/signup">Signup</a>
+                    <a th:if="${email}" class="nav-link" href="/userAccount">See Your Account</a>
+                </li>
+
+                <li  class="nav-item">
+                    <a th:unless="${email}" class="nav-link" href="/login">Signin</a>
+                    <a th:if="${email}" class="nav-item nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+            <span th:if="${email}" class="navbar-text">
+                Hello, [[${email}]]!
+            </span>
+        </div>
     </nav>
+
+<!--        //TODO change to showing persons first name-->
+<!--        <h1></h1>-->
+
 
     <!-- if person is new or needs to login -->
-    <nav th:unless="${email}">
-        <ul class="nav nav-pills nav-fill" id="pills-tab-if-no-email " role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="home-tab-if-no-email"  href="/" role="tab" >Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="login-if-no-email"  href="/login" role="tab">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="signup-if-no-email"  href="/signup" role="tab">Signup</a>
-            </li>
-        </ul>
+    <nav >
+
     </nav>
 </section>
-
-
-<div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-</div>
-
 </body>
 </html>
