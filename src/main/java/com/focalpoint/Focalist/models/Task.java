@@ -1,8 +1,5 @@
 package com.focalpoint.Focalist.models;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-
 import javax.persistence.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
