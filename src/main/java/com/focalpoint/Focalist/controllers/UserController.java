@@ -35,7 +35,11 @@ public class UserController {
 
     // Receives data from form that gets new user data
     @PostMapping("/signup")
-    public RedirectView addUser(String firstName, String lastName, String phoneNumber, String password, String email) {
+    public RedirectView addUser(String firstName,
+                                String lastName,
+                                String phoneNumber,
+                                String password,
+                                String email) {
 
         // create newUser and salt & hash password
         ApplicationUser newUser = new ApplicationUser(firstName,
@@ -70,6 +74,7 @@ public class UserController {
             m.addAttribute("email", p.getName());
         }
         m.addAttribute("user", applicationUserRepository.findByUsername(p.getName()));
+       
         return "userAccount";
     }
 
