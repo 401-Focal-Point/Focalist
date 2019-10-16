@@ -6,26 +6,45 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div th:replace="fragments/nav :: nav"></div>
-
-        <h2>Queued Reminder Messages</h2>
-            <th:block th:each="task : ${user.tasks}">
-                <p th:text="${task.title}"></p>
-                <p th:text="${task.localTime}"></p>
-                <p th:text="${task.note}"></p>
-            </th:block>
-
-        <h2>Make a Reminder Message</h2>
-        <form action="api/task" method="POST">
-            Title<input type="text" name="title">
-            Note<input type="text" name="note">
-            Time<input type="datetime-local" name="time">
-            <input type="hidden" name="offset" id="offset">
-            <input type="submit" />
-        </form>
+        <div class="row">
+            <!-- Form to submit new message -->
+            <div class="col-sm" id="submitMessage">
+                <h2>Add Reminder Message</h2>
+                <form action="api/task" method="POST">
+                    Title<input type="text" name="title">
+                    Note<input type="text" name="note">
+                    Time<input type="datetime-local" name="time">
+                    <input type="hidden" name="offset" id="offset">
+                    <input type="submit" />
+                </form>
+            </div>
+            <!-- Show Messages the User has Submitted -->
+            <div class="col-sm" id="scheduledMessages">
+                <h2>Scheduled Messages</h2>
+                <!-- starting code for collapsible from: https://getbootstrap.com/docs/4.3/components/collapse/ -->
+                <div class="accordion" id="accordionMessage" th:each="task : ${user.tasks}">
+                    <div class="card">
+                        <div class="card-header" th:id="${task.id}">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        th:data-target="${'#collapse' + task.id}" aria-expanded="false" th:aria-controls="${'collapse' + task.id}">
+                                    [[${task.localTime}]]
+                                </button>
+                            </h2>
+                        </div>
+                        <div th:id="${'collapse' + task.id}" class="collapse" th:aria-labelledby="${task.id}" data-parent="#accordionMessage">
+                            <div class="card-body">
+                                <p>Title: [[${task.title}]]</p>
+                                <p>Message: [[${task.note}]]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end accordion -->
+            </div> <!-- end show messages -->
+        </div>
     </div>
-
     <footer>
         <section th:replace="fragments/footer :: footer"></section>
     </footer>
