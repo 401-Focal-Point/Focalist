@@ -18,6 +18,11 @@ body {
   height: auto;
 }
 
+#nav{
+    padding-top:5em;
+    padding-bottom:5em;
+}
+
 #nav-span{
     color: black;
     font-weight:bold;
@@ -27,3 +32,5 @@ body {
     color: #589BF5;
     font-weight:bold;
 }
+
+
