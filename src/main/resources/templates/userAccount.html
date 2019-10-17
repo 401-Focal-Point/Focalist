@@ -15,14 +15,15 @@
     <div class="container">
         <div class="row">
             <!-- Form to submit new message -->
-            <div class="col-sm home mb-5" id="submitMessage">
+            <div class="col-sm home mb-5 p-3" id="submitMessage">
                 <h2>Add Reminder Message</h2>
                 <form action="api/task" method="POST">
                     <div class="form-group">
                         <input required type="text" name="title" placeholder="Message Title"
                             onkeyup="textCounter(this,'counter',65);" class="form-control form-control-lg my-2">
-                        <textarea required placeholder="Note *804 char max " onkeyup="textCounter(this,'counter',804);"
-                            id="message" class="form-control form-control-lg my-2"></textarea>
+                        <textarea required placeholder="Note *804 char max " name="note"
+                            onkeyup="textCounter(this,'counter',804);" id="message"
+                            class="form-control form-control-lg my-2"></textarea>
                         <input required type="datetime-local" name="time" placeholder="Reminder Time"
                             class="form-control form-control-lg my-2">
                         <input required type="hidden" name="offset" id="offset"
