@@ -13,43 +13,61 @@ body {
   color: #49BFC0;
 }
 
+.nav-tabs .nav-item .nav-link.active {
+  background: linear-gradient(45deg, #589BF5, #49BFC0);
+  color: #eee;
+}
+
+a.nav-link {
+  color: #eee;
+}
+
 .home-image {
   max-width: 30%;
   height: auto;
 }
 
-#nav{
-    padding-top:2em;
-    padding-bottom:2em;
+#nav {
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
-#nav-span{
-    color: black;
-    font-weight:bold;
+#nav-span {
+  color: black;
+  font-weight: bold;
 }
 
-#nav-span a{
-    color: #589BF5;
-    font-weight:bold;
+#nav-span a {
+  color: #589BF5;
+  font-weight: bold;
 }
 
 #descriptionLower {
-        display: none;
-        }
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
 
-    #descriptionUpper {
-        display: none;
-        }
+  #descriptionUpper {
+    display: none;
+  }
 
-    #descriptionLower{
-        display: block;
-        }
-
-
+  #descriptionLower {
+    display: block;
+  }
 }
 
 #username-error {
-    color: red;
+  color: red;
+}
+
+.red {
+  color: red;
+  margin: 0px 7px;
+
+}
+
+.green {
+  color: green;
+  margin: 0px 7px;
 }

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 @Controller
@@ -81,7 +82,20 @@ public class UserController {
         // sort messages by time in displayed messages
         List<Task> userTasks = currentUser.getTasks();
         userTasks.sort(Comparator.comparing(Task::getUtcTime));
-        m.addAttribute("sortedMessages", userTasks);
+
+        List<Task> uncompletedTasks = new LinkedList<>();
+        List<Task> completedTasks = new LinkedList<>();
+
+        for (Task task: userTasks) {
+            if (task.isCompleted()) {
+                completedTasks.add(task);
+            } else {
+                uncompletedTasks.add(task);
+            }
+        }
+//        m.addAttribute("sortedMessages", userTasks);
+        m.addAttribute("uncompletedTasks", uncompletedTasks);
+        m.addAttribute("completedTasks", completedTasks);
         return "userAccount";
     }
 }
