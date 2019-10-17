@@ -23,6 +23,7 @@
                     <div class="col-lg-8 pt-4">
                         <h1 class="display-4">Welcome to A <span class="theme">Modern Way</span> of Receiving
                             Reminders!</h1>
+                        <h2 th:if="${param.usernametaken}">That username was taken. Please try another one.</h2>
                         <div class="d-flex flex-row">
                             <div class="p-4 align-self-start">
                                 <i class="fas fa-calendar-check theme fa-lg"></i>
