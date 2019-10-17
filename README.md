@@ -7,6 +7,7 @@ This is a web application that allows users to create scheduled reminder text me
 ## Contributors
 ### [Quang Nguyen](https://github.com/TheQuangNguyen)
 ![headshot](assets/quang-nguyen.png)
+
 I am from Vietnam.
 I graduated from UW with mechanical engineering degree.
 I like software development because I can contribute in creating product that other people use. Plus it is just fun.
