@@ -19,8 +19,8 @@ body {
 }
 
 #nav{
-    padding-top:5em;
-    padding-bottom:5em;
+    padding-top:2em;
+    padding-bottom:2em;
 }
 
 #nav-span{
@@ -33,4 +33,19 @@ body {
     font-weight:bold;
 }
 
+#descriptionLower {
+        display: none;
+        }
 
+@media only screen and (max-width: 600px) {
+
+    #descriptionUpper {
+        display: none;
+        }
+
+    #descriptionLower{
+        display: block;
+        }
+
+
+}
