@@ -6,7 +6,7 @@
 </head>
 <body>
 <section th:fragment="nav">
-    <nav class="navbar navbar-dark">
+    <nav id="nav" class="navbar navbar-dark">
         <a class="navbar-brand" href="/"><img id="logo" src="./assets/logo.png"></a>
             <span th:if="${name}" class="navbar-text" id="nav-span" >
                 Hello, [[${name}]]! <a href="/logout">Logout</a>
