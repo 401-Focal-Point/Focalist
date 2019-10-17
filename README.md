@@ -15,10 +15,12 @@ Find me on [LinkedIn](https://www.linkedin.com/in/quangnguyendev/) and on [GitHu
 
 ### [Sharina Stubbs](https://github.com/SharinaS?tab=repositories)
 ![headshot](assets/sharina-stubbs.jpeg)
+
 A software developer with a background in medicine, music, and competitive sailing. Committed to building high-quality solutions for global and business solutions. Dedicated to accountable and adaptable teamwork. Find me on [LinkedIn](https://www.linkedin.com/in/sharina-stubbs/) and on [GitHub](https://github.com/SharinaS).
 
 ### [Ahren Swett](https://github.com/ahrenswett)
 ![headshot](assets/ahren-swett.jpeg) 
+
 Focused on bringing the innovative  problem solving  skills I’ve gained after 9 years of military service as a medic, and 4 years of entrepreneurial endeavors; including customer service, teamwork, and leadership, into the world of software development.
 
 # Wireframes for App
