@@ -20,7 +20,7 @@
                         <p>FocaList is here for you, to send you reminder text messages at times of your choosing,
                             so that you never forget those important things again</p>
                     </div> -->
-                    <div class="col-lg-8 pt-4">
+                    <div id="descriptionUpper" class="col-lg-8 pt-4">
                         <h1 class="display-4">Welcome to A <span class="theme">Modern Way</span> of Receiving
                             Reminders!</h1>
                         <div class="d-flex flex-row">
@@ -71,10 +71,10 @@
                                         <div th:if="${param.error}">
                                             There was an error! Please try your email and password again.
                                         </div>
-                                        <form action="/login" method="POST" class="md-form form-sm">
-                                            <input type="text" name="username" placeholder="Email"
+                                        <form action="/" method="POST" class="md-form form-sm">
+                                            <input required type="text" name="username" placeholder="Email"
                                                 class="form-control form-control-lg my-2" />
-                                            <input name="password" type="password" placeholder="Password"
+                                            <input required name="password" type="password" placeholder="Password"
                                                 class="form-control form-control-lg my-2" />
                                             <input type="submit" value="Log In"
                                                 class="btn btn-outline-light btn-block mt-4" />
@@ -85,15 +85,15 @@
                                         <p>Please fill out this form to register</p>
                                          <form action="/signup" method="POST" class="md-form form-sm">
                                             <div class="form-group">
-                                                <input type="text" name="firstName" placeholder="First Name"
+                                                <input required type="text" name="firstName" placeholder="First Name"
                                                     class="form-control form-control-lg my-2">
-                                                <input type="text" name="lastName" placeholder="Last Name"
+                                                <input required type="text" name="lastName" placeholder="Last Name"
                                                     class="form-control form-control-lg my-2">
-                                                <input type="email" name="email" placeholder="Email"
+                                                <input required type="email" name="email" placeholder="Email"
                                                     class="form-control form-control-lg my-2">
-                                                <input name="password" type="password" placeholder="Password"
+                                                <input required name="password" type="password" placeholder="Password"
                                                     class="form-control form-control-lg my-2">
-                                                <input type="text" name="phoneNumber" placeholder="Mobile Number"
+                                                <input required type="text" name="phoneNumber" placeholder="Mobile Number"
                                                     class="form-control form-control-lg my-2">
                                                 <input type="submit" value="Register" data-toggle="modal"
                                                     data-target="#TermsAndAgreement"
@@ -106,50 +106,41 @@
                             </div>
                         </div>
                     </div>
+                    <div id="descriptionLower" class="col-lg-8 pt-4">
+                        <h1 class="display-4">Welcome to A <span class="theme">Modern Way</span> of Receiving
+                            Reminders!</h1>
+                        <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-calendar-check theme fa-lg"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                <h5>Modern UI that is intuitive and simple to use</h4>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-calendar-check theme fa-lg"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                <h5>Text message reminders that helps you remember to do important things</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-calendar-check theme fa-lg"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                <h5>Organize tasks to maintain productivity in your daily life</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
 
-    <!-- <div class="modal fade" id="TermsAndAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Terms and Agreement</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>The following are things that you need to accept before using our sites</p>
-                    <p>We are not responsible for any missed appointments</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Accept</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
-    <!-- <section class="home">
-        <div th:replace="fragments/nav :: nav"></div>
-        <div class="container">
-            <h1>Welcome to A Modern Way of Receiving Reminders!</h1>
-            <div th:if="${email}"></div>
-
-            <div th:unless="${email}">
-                <h3>Please signup or login to add reminders and manage your account.</h3>
-                <p>FocaList is here for you, to send you reminder text messages at times of your choosing,
-                    so that you never forget those important things again</p>
-                <img src="https://image.flaticon.com/icons/svg/1648/1648067.svg"
-                    class="img-fluid rounded float-right home-image" alt="Responsive Image">
-            </div>
-        </div>
-
-    </section> -->
 </body>
 <footer>
     <section th:replace="fragments/footer :: footer"></section>

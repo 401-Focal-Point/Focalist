@@ -18,6 +18,11 @@ body {
   height: auto;
 }
 
+#nav{
+    padding-top:2em;
+    padding-bottom:2em;
+}
+
 #nav-span{
     color: black;
     font-weight:bold;
@@ -26,4 +31,21 @@ body {
 #nav-span a{
     color: #589BF5;
     font-weight:bold;
+}
+
+#descriptionLower {
+        display: none;
+        }
+
+@media only screen and (max-width: 600px) {
+
+    #descriptionUpper {
+        display: none;
+        }
+
+    #descriptionLower{
+        display: block;
+        }
+
+
 }
