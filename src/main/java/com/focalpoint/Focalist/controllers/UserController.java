@@ -79,8 +79,12 @@ public class UserController {
 
         // sort messages by time in displayed messages
         List<Task> userTasks = currentUser.getTasks();
+
         userTasks.sort(Comparator.comparing(Task::getUtcTime));
         m.addAttribute("sortedMessages", userTasks);
+
+        // replace current localTime with formatted date and time
+
 
 
         return "userAccount";

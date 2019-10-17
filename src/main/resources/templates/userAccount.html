@@ -40,7 +40,7 @@
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         th:data-target="${'#collapse' + task.id}" aria-expanded="false" th:aria-controls="${'collapse' + task.id}">
-                                    [[${task.localTime}]]
+                                    [[${task.timeFormat()}]]
                                 </button>
                             </h2>
                         </div>

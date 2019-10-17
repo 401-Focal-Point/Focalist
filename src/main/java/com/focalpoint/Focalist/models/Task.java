@@ -1,6 +1,7 @@
 package com.focalpoint.Focalist.models;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -68,5 +69,10 @@ public class Task {
         Instant instant = this.localTime.toInstant();
         String time = instant.atZone(ZoneOffset.UTC).toLocalTime().format(DateTimeFormatter.ofPattern("hh:mm a"));
         return String.format("(%s) %s", time, this.title);
+    }
+
+    public String timeFormat() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm a");
+        return simpleDateFormat.format(this.localTime);
     }
 }
