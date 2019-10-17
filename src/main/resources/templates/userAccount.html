@@ -17,17 +17,15 @@
                 <h2>Add Reminder Message</h2>
                 <form action="api/task" method="POST">
                     <div class="form-group">
-                        <input required type="text" name="title" placeholder="Message Title" onkeyup="textCounter(this,'counter',65);" class="form-control form-control-lg my-2">
-<!--                        <input disabled  maxlength="3" value="804" id="counter" class="form-control form-control-lg my-2">-->
-                        <textarea required placeholder="Note *804 char max " onkeyup="textCounter(this,'counter',804);" id="message" class="form-control form-control-lg my-2"></textarea>
-
-<!--                        <input type="text" name="note" placeholder="Note" maxlength="804"-->
-<!--                               class="form-control form-control-lg my-2">-->
+                        <input required type="text" name="title" placeholder="Message Title" onkeyup="textCounter(this,'counter',65);"
+                               class="form-control form-control-lg my-2">
+                        <textarea required placeholder="Note *804 char max " onkeyup="textCounter(this,'counter',804);" id="message"
+                                  class="form-control form-control-lg my-2"></textarea>
                         <input required type="datetime-local" name="time" placeholder="Reminder Time"
                                class="form-control form-control-lg my-2">
                         <input required type="hidden" name="offset" id="offset"
                                class="form-control form-control-lg my-2">
-                        <input required type="submit" value="Submit"
+                        <input type="submit" value="Submit"
                                class="btn btn-outline-light btn-block my-2" />
                     </div>
                 </form>

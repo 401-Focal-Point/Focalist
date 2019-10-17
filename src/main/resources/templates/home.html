@@ -72,9 +72,9 @@
                                             There was an error! Please try your email and password again.
                                         </div>
                                         <form action="/" method="POST" class="md-form form-sm">
-                                            <input type="text" name="username" placeholder="Email"
+                                            <input required type="text" name="username" placeholder="Email"
                                                 class="form-control form-control-lg my-2" />
-                                            <input name="password" type="password" placeholder="Password"
+                                            <input required name="password" type="password" placeholder="Password"
                                                 class="form-control form-control-lg my-2" />
                                             <input type="submit" value="Log In"
                                                 class="btn btn-outline-light btn-block mt-4" />
@@ -85,15 +85,15 @@
                                         <p>Please fill out this form to register</p>
                                          <form action="/signup" method="POST" class="md-form form-sm">
                                             <div class="form-group">
-                                                <input type="text" name="firstName" placeholder="First Name"
+                                                <input required type="text" name="firstName" placeholder="First Name"
                                                     class="form-control form-control-lg my-2">
-                                                <input type="text" name="lastName" placeholder="Last Name"
+                                                <input required type="text" name="lastName" placeholder="Last Name"
                                                     class="form-control form-control-lg my-2">
-                                                <input type="email" name="email" placeholder="Email"
+                                                <input required type="email" name="email" placeholder="Email"
                                                     class="form-control form-control-lg my-2">
-                                                <input name="password" type="password" placeholder="Password"
+                                                <input required name="password" type="password" placeholder="Password"
                                                     class="form-control form-control-lg my-2">
-                                                <input type="text" name="phoneNumber" placeholder="Mobile Number"
+                                                <input required type="text" name="phoneNumber" placeholder="Mobile Number"
                                                     class="form-control form-control-lg my-2">
                                                 <input type="submit" value="Register" data-toggle="modal"
                                                     data-target="#TermsAndAgreement"
