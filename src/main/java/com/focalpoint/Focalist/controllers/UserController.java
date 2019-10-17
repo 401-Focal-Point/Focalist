@@ -67,10 +67,7 @@ public class UserController {
         }
     }
 
-//     Go to login page    public String getLoginPage() {
-////        return "userAccount";
-////    }
-//    @GetMapping("/login")
+
 
     // Go to userAccount page
     @GetMapping("/userAccount")
