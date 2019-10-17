@@ -3,7 +3,6 @@ package com.focalpoint.Focalist.controllers;
 import com.focalpoint.Focalist.models.ApplicationUser;
 import com.focalpoint.Focalist.models.ApplicationUserRepository;
 import com.focalpoint.Focalist.models.Task;
-import com.twilio.rest.api.v2010.account.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -12,10 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -51,17 +48,22 @@ public class UserController {
                                                     passwordEncoder.encode(password),
                                                     email);
 
-        // save newUser to database focalist
-        applicationUserRepository.save(newUser);
+        if (applicationUserRepository.findByUsername(email) == null) {
+            // save newUser to database focalist
+            System.out.println("Got in");
+            applicationUserRepository.save(newUser);
 
-        // allow autologin after signing up for an account
-        Authentication authentication = new UsernamePasswordAuthenticationToken(newUser,
-                null,
-                new ArrayList<>());
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+            // allow autologin after signing up for an account
+            Authentication authentication = new UsernamePasswordAuthenticationToken(newUser,
+                    null,
+                    new ArrayList<>());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
 
-        // send user back to homepage after setting up account
-        return new RedirectView("/userAccount");
+            return new RedirectView("/userAccount");
+        } else {
+            // add param to then be shown in the front end
+            return new RedirectView("/?usernametaken");
+        }
     }
 
 
@@ -77,10 +79,6 @@ public class UserController {
         List<Task> userTasks = currentUser.getTasks();
         userTasks.sort(Comparator.comparing(Task::getUtcTime));
         m.addAttribute("sortedMessages", userTasks);
-
-
         return "userAccount";
     }
-
-
 }

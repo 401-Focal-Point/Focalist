@@ -1,12 +1,19 @@
 # Focalist The Scheduling App
-
-## Team Members
-
-Sharina Stubbs, Ehren Swett, Quang Nguyen
-
 ## Project Description
+This is a web application that allows users to create scheduled reminder text messages that are texted to the user at the specified date and time in the future. 
 
-This is a web application that users can add their todos things in the future and the app will send reminders via text messages. The app will be configurable in that users can choose the format and time of the reminder messages. 
+![screenshot](assets/app-scrn-shot.png)
+
+## Contributors
+### [Quang Nguyen](https://github.com/TheQuangNguyen)
+![headshot](assets/quang-nguyen.png)
+
+### [Sharina Stubbs](https://github.com/SharinaS?tab=repositories)
+![headshot](assets/sharina-stubbs.jpeg)
+A software developer with a background in medicine, music, and competitive sailing. Committed to building high-quality solutions for global and business solutions. Dedicated to accountable and adaptable teamwork. Find me on [LinkedIn](https://www.linkedin.com/in/sharina-stubbs/) and on [GitHub](https://github.com/SharinaS).
+
+### [Ahren Swett](https://github.com/ahrenswett)
+![headshot](assets/ahren-swett.jpeg)
 
 # User Stories
 ### Resource followed for creating these user stories: 

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <div th:replace="fragments/csshead :: css"></div>
     <title>Title</title>
 </head>
+
 <body>
-<!--Nav container-->
+    <!--Nav container-->
     <div class="container">
         <section th:replace="fragments/nav :: nav"></section>
     </div>
@@ -40,11 +42,12 @@
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         th:data-target="${'#collapse' + task.id}" aria-expanded="false" th:aria-controls="${'collapse' + task.id}">
-                                    [[${task.localTime}]]
+                                    [[${task.timeFormat()}]]
                                 </button>
                             </h2>
                         </div>
-                        <div th:id="${'collapse' + task.id}" class="collapse" th:aria-labelledby="${task.id}" data-parent="#accordionMessage">
+                        <div th:id="${'collapse' + task.id}" class="collapse" th:aria-labelledby="${task.id}"
+                            data-parent="#accordionMessage">
                             <div class="card-body">
                                 <p>Title: [[${task.title}]]</p>
                                 <p>Message: [[${task.note}]]</p>
@@ -59,4 +62,5 @@
         <section th:replace="fragments/footer :: footer"></section>
     </footer>
 </body>
+
 </html>

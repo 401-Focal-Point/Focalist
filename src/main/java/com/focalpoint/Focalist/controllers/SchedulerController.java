@@ -24,20 +24,25 @@ public class   SchedulerController {
     @GetMapping("/api/schedule")
     public void scheduleMessage () {
 //        make an ordered list or all tasks
+        System.out.println("Got in");
         List<Task> tasks = taskRepository.findAllNotCompleteOrderByUTC();
         Date currentServerTime = DateTime.now().toDate();
+        System.out.println(currentServerTime);
         Date currentServerTimePlusClockProcessInterval = DateTime.now().plusMinutes(10).toDate();
 
 //       TODO:make a string builder to concatenate multiple task that need to be sent at one time.
         for (Task task: tasks) {
+            System.out.println("Got in task");
             Date taskTime = task.getUtcTime();
-            if (taskTime.after(currentServerTime) && taskTime.before(currentServerTimePlusClockProcessInterval)) {
+            System.out.println(taskTime);
+            if ((taskTime.after(currentServerTime) && taskTime.before(currentServerTimePlusClockProcessInterval)) || taskTime.before(currentServerTime)) {
+                System.out.println("Got in sending messages");
                 System.out.println(task.toString());
                 SmsRequest newMessage = new SmsRequest(task.getApplicationUser().getPhoneNumber(), task.toString());
                 smsService.sendSms(newMessage);
                 task.setCompleted(true);
                 taskRepository.save(task);
-            }else {
+            } else {
                 break;
             }
         }
