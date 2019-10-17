@@ -64,10 +64,7 @@ public class UserController {
         return new RedirectView("/userAccount");
     }
 
-//     Go to login page    public String getLoginPage() {
-////        return "userAccount";
-////    }
-//    @GetMapping("/login")
+
 
     // Go to userAccount page
     @GetMapping("/userAccount")
