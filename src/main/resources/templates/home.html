@@ -10,15 +10,6 @@
 <body>
     <div class="container">
         <section th:replace="fragments/nav :: nav"></section>
-<<<<<<< HEAD
-        <div class="row">
-            <!-- Styling was derived from this youtube tutorial https://www.youtube.com/watch?v=NDcfKNQBqAk -->
-            <header id="home-section">
-                <div class="home-inner">
-                    <div class="container">
-                        <div class="row">
-                            <!-- <div th:unless="${email}">
-=======
     </div>
     <!-- Styling was derived from this youtube tutorial https://www.youtube.com/watch?v=NDcfKNQBqAk -->
     <header id="home-section">
@@ -26,33 +17,74 @@
             <div class="container">
                 <div class="row">
                     <!-- <div th:unless="${email}">
->>>>>>> 128ea5e3d96e14655d9e5d0fa92634d93b9b4797
                         <p>FocaList is here for you, to send you reminder text messages at times of your choosing,
                             so that you never forget those important things again</p>
                     </div> -->
-                            <div class="col-lg-8 pt-4">
-                                <h1 class="display-4">Welcome to A <span class="theme">Modern Way</span> of Receiving
-                                    Reminders!</h1>
-                                <div class="d-flex flex-row">
-                                    <div class="p-4 align-self-start">
-                                        <i class="fas fa-calendar-check theme fa-lg"></i>
+                    <div class="col-lg-8 pt-4">
+                        <h1 class="display-4">Welcome to A <span class="theme">Modern Way</span> of Receiving
+                            Reminders!</h1>
+                        <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-calendar-check theme fa-lg"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                <h5>Modern UI that is intuitive and simple to use</h4>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-calendar-check theme fa-lg"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                <h5>Text message reminders that helps you remember to do important things</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class="p-4 align-self-start">
+                                <i class="fas fa-calendar-check theme fa-lg"></i>
+                            </div>
+                            <div class="p-4 align-self-end">
+                                <h5>Organize tasks to maintain productivity in your daily life</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card home text-center card-form">
+                            <div class="card-body">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active text-dark" data-toggle="tab" href="#panel7"
+                                            role="tab"><i class="fas fa-user mr-1"></i>
+                                            Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" data-toggle="tab" href="#panel8" role="tab"><i
+                                                class="fas fa-user-plus mr-1"></i>
+                                            Register</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+                                        <h3 class="mt-3">Welcome Back</h3>
+                                        <p>Log into your account</p>
+                                        <div th:if="${param.error}">
+                                            There was an error! Please try your email and password again.
+                                        </div>
+                                        <form action="/login" method="POST" class="md-form form-sm">
+                                            <input type="text" name="username" placeholder="Email"
+                                                class="form-control form-control-lg my-2" />
+                                            <input name="password" type="password" placeholder="Password"
+                                                class="form-control form-control-lg my-2" />
+                                            <input type="submit" value="Log In"
+                                                class="btn btn-outline-light btn-block mt-4" />
+                                        </form>
                                     </div>
-<<<<<<< HEAD
-                                    <div class="p-4 align-self-end">
-                                        <h5>Modern UI that is intuitive and simple to use</h4>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div class="p-4 align-self-start">
-                                        <i class="fas fa-calendar-check theme fa-lg"></i>
-                                    </div>
-                                    <div class="p-4 align-self-end">
-                                        <h5>Text message reminders that helps you remember to do important things</h5>
-=======
                                     <div class="tab-pane fade" id="panel8" role="tabpanel">
                                         <h3 class="mt-3">Sign Up Today</h3>
                                         <p>Please fill out this form to register</p>
-                                         <form action="/signup" method="POST" class="md-form form-sm">
+                                        <!-- <form action="/signup" method="POST"> -->
+                                        <form action="" class="md-form form-sm">
                                             <div class="form-group">
                                                 <input type="text" name="firstName" placeholder="First Name"
                                                     class="form-control form-control-lg my-2">
@@ -69,85 +101,19 @@
                                                     class="btn btn-outline-light btn-block mt-4" />
                                             </div>
                                         </form>
->>>>>>> 128ea5e3d96e14655d9e5d0fa92634d93b9b4797
                                     </div>
                                 </div>
-                                <div class="d-flex flex-row">
-                                    <div class="p-4 align-self-start">
-                                        <i class="fas fa-calendar-check theme fa-lg"></i>
-                                    </div>
-                                    <div class="p-4 align-self-end">
-                                        <h5>Organize tasks to maintain productivity in your daily life</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card home text-center card-form">
-                                    <div class="card-body">
-                                        <!-- Nav tabs -->
-                                        <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active text-dark" data-toggle="tab" href="#panel7"
-                                                    role="tab"><i class="fas fa-user mr-1"></i>
-                                                    Login</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link text-dark" data-toggle="tab" href="#panel8"
-                                                    role="tab"><i class="fas fa-user-plus mr-1"></i>
-                                                    Register</a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-                                                <h3 class="mt-3">Welcome Back</h3>
-                                                <p>Log into your account</p>
-                                                <div th:if="${param.error}">
-                                                    There was an error! Please try your email and password again.
-                                                </div>
-                                                <form action="/login" method="POST" class="md-form form-sm">
-                                                    <input type="text" name="username" placeholder="Email"
-                                                        class="form-control form-control-lg my-2" />
-                                                    <input name="password" type="password" placeholder="Password"
-                                                        class="form-control form-control-lg my-2" />
-                                                    <input type="submit" value="Log In"
-                                                        class="btn btn-outline-light btn-block mt-4" />
-                                                </form>
-                                            </div>
-                                            <div class="tab-pane fade" id="panel8" role="tabpanel">
-                                                <h3 class="mt-3">Sign Up Today</h3>
-                                                <p>Please fill out this form to register</p>
-                                                <!-- <form action="/signup" method="POST"> -->
-                                                <form action="" class="md-form form-sm">
-                                                    <div class="form-group">
-                                                        <input type="text" name="firstName" placeholder="First Name"
-                                                            class="form-control form-control-lg my-2">
-                                                        <input type="text" name="lastName" placeholder="Last Name"
-                                                            class="form-control form-control-lg my-2">
-                                                        <input type="email" name="email" placeholder="Email"
-                                                            class="form-control form-control-lg my-2">
-                                                        <input name="password" type="password" placeholder="Password"
-                                                            class="form-control form-control-lg my-2">
-                                                        <input type="text" name="phoneNumber"
-                                                            placeholder="Mobile Number"
-                                                            class="form-control form-control-lg my-2">
-                                                        <input type="submit" value="Register" data-toggle="modal"
-                                                            data-target="#TermsAndAgreement"
-                                                            class="btn btn-outline-light btn-block mt-4" />
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
 
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
+        </div>
+    </header>
 
 
-            <!-- <div class="modal fade" id="TermsAndAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <!-- <div class="modal fade" id="TermsAndAgreement" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -169,7 +135,7 @@
         </div>
     </div> -->
 
-            <!-- <section class="home">
+    <!-- <section class="home">
         <div th:replace="fragments/nav :: nav"></div>
         <div class="container">
             <h1>Welcome to A Modern Way of Receiving Reminders!</h1>
