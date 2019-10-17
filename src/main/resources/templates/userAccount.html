@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <!-- Form to submit new message -->
-            <div class="col-sm home" id="submitMessage">
+            <div class="col-sm home mb-5" id="submitMessage">
                 <h2>Add Reminder Message</h2>
                 <form action="api/task" method="POST">
                     <div class="form-group">
@@ -35,12 +35,12 @@
             <div class="col-sm" id="scheduledMessages">
                 <ul class="nav nav-tabs md-tabs tabs-2 darken-3" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active text-dark" data-toggle="tab" href="#panel7" role="tab"><i
+                        <a class="nav-link active text-dark task-tab" data-toggle="tab" href="#panel7" role="tab"><i
                                 class="fas fa-list-ul mr-1"></i>
                             Upcoming Tasks <span class="red">[[${uncompletedTasks.size()}]]</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" data-toggle="tab" href="#panel8" role="tab"><i
+                        <a class="nav-link text-dark task-tab" data-toggle="tab" href="#panel8" role="tab"><i
                                 class="fas fa-tasks mr-1"></i>
                             Completed Tasks <span class="green">[[${completedTasks.size()}]]</span></a>
                     </li>

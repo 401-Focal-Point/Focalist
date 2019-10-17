@@ -13,7 +13,7 @@ body {
   color: #49BFC0;
 }
 
-.nav-tabs .nav-item .nav-link.active {
+.nav-tabs .nav-item .task-tab.active {
   background: linear-gradient(45deg, #589BF5, #49BFC0);
   color: #eee;
 }
@@ -68,6 +68,6 @@ a.nav-link {
 }
 
 .green {
-  color: green;
+  color: lightgreen;
   margin: 0px 7px;
 }
