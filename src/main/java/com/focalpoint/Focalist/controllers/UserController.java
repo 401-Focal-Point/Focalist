@@ -39,9 +39,7 @@ public class UserController {
                                 String lastName,
                                 String phoneNumber,
                                 String password,
-                                String email,
-                                Principal p,
-                                Model m) {
+                                String email) {
 
         // create newUser and salt & hash password
         ApplicationUser newUser = new ApplicationUser(firstName,
@@ -49,14 +47,18 @@ public class UserController {
                                                     "+1" + phoneNumber,
                                                     passwordEncoder.encode(password),
                                                     email);
+
         if (applicationUserRepository.findByUsername(email) == null) {
             // save newUser to database focalist
+            System.out.println("Got in");
             applicationUserRepository.save(newUser);
+
             // allow autologin after signing up for an account
             Authentication authentication = new UsernamePasswordAuthenticationToken(newUser,
                     null,
                     new ArrayList<>());
             SecurityContextHolder.getContext().setAuthentication(authentication);
+
             return new RedirectView("/userAccount");
         } else {
             // add param to then be shown in the front end
