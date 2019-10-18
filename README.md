@@ -1,8 +1,8 @@
-# Focalist The Scheduling App
+# Focalist: A Reminder App
 ## Project Description
-This is a web application that allows users to create scheduled reminder text messages that are texted to the user at the specified date and time in the future. 
+This is a web application that allows users to create scheduled reminder text messages that are texted to the user at the specified date and time. 
 
-![screenshot](assets/app-scrn-shot.png)
+![screenshot](assets/app-screen-shot.png)
 
 ## Contributors
 ### [Quang Nguyen](https://github.com/TheQuangNguyen)
@@ -17,39 +17,46 @@ Find me on [LinkedIn](https://www.linkedin.com/in/quangnguyendev/) and on [GitHu
 ### [Sharina Stubbs](https://github.com/SharinaS?tab=repositories)
 ![headshot](assets/sharina-stubbs.jpeg)
 
-A software developer with a background in medicine, music, and competitive sailing. Committed to building high-quality solutions for global and business solutions. Dedicated to accountable and adaptable teamwork. Find me on [LinkedIn](https://www.linkedin.com/in/sharina-stubbs/) and on [GitHub](https://github.com/SharinaS).
+A software developer with a background in medicine, music, and competitive team sailing. Committed to building high-quality solutions for global and business solutions. Dedicated to accountable and adaptable teamwork. Find me on [LinkedIn](https://www.linkedin.com/in/sharina-stubbs/) and on [GitHub](https://github.com/SharinaS).
 
 ### [Ahren Swett](https://github.com/ahrenswett)
 ![headshot](assets/ahren-swett.jpeg) 
 
-Focused on bringing the innovative  problem solving  skills I’ve gained after 9 years of military service as a medic, and 4 years of entrepreneurial endeavors; including customer service, teamwork, and leadership, into the world of software development.
+I'm a software developer who is dedicated to bringing innovative problem-solving  skills I’ve gained after 9 years of military service as a medic, and 4 years of entrepreneurial endeavors, including customer service, teamwork, and leadership, into the world of software development.
 
 # Wireframes for App
 Wireframes can be viewed within our public [Trello Board](https://trello.com/b/9v2P4pvL/team-focalpoint). 
 
-# Domain Modeling and Database-Entity-Relationship Diagram
-Domain modeling and a Database-Entity-Relationship Diagram can be seen on our [Trello Board](https://trello.com/b/9v2P4pvL/team-focalpoint).
+# Domain Modeling and Database-Entity-Relationship Diagrams
+## Domain-Modeling:
+![domain-model](assets/domain-model.jpg)
+
+## Database-Entity-Relationship:
+![db-entity-rel](assets/databaseERC.jpg)
+
+# User Stories
+Read the [user stories](https://github.com/401-Focal-Point/Focalist/blob/master/USERSTORIES.md) in our repo.
 
 # How to Use Focalist
-To try out the app, head over to our deployed site at: https://focalistapp.herokuapp.com.
+To view and try out the app, head over to our deployed site on Heroku: [FocaList](https://focalistapp.herokuapp.com.).
 
 1. Clone the App
 2. Sign up with Twilio and get Twilio Account SID, Token and Trial Number numbers
 3. Set up Env variables
-  * TWILIO_ACCOUNT_SID
-  * TWILIO_AUTH_TOKEN
-  * TILIO_TRIAL_NUMBER
-  * DATABASE_URL
-  * POSTGRESQL_USERNAME
-  * POSTGRESQL_PASSWORD
+    * TWILIO_ACCOUNT_SID
+    * TWILIO_AUTH_TOKEN
+    * TILIO_TRIAL_NUMBER
+    * DATABASE_URL
+    * POSTGRESQL_USERNAME
+    * POSTGRESQL_PASSWORD
 4. Deploy to Heroku (and note your application url)
 5. Set up a Heroku Scheduler using the following command for a new job task with a free dyno and a 10 minute schedule. This command will activate any unsent messages scheduled within the next ten minutes. This command can also be run in the command line. 
 ```
-curl -s [application-url]/api/schedule
+curl -s [the-application-url]/api/schedule
 ```
 6. To check your heorku postgres database, run the following command in your terminal:
 ```
-heroku pg:psql
+$ heroku pg:psql
 ```
 
 # References
