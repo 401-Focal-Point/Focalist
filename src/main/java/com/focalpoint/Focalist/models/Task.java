@@ -72,7 +72,7 @@ public class Task {
     }
 
     public String timeFormat() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy HH:mm a");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMMM yyyy hh:mm a");
         return simpleDateFormat.format(this.localTime);
     }
 }

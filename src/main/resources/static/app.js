@@ -1,11 +1,13 @@
 'use strict';
-//gets the local
+// gets the local
 (function() {
     var offset = new Date().getTimezoneOffset()/60;
     $('#offset').val(offset);
 })();
 
-//https://stackoverflow.com/questions/12742595/show-how-many-characters-remaining-in-a-html-text-box-using-javascript
+// Resource:
+// https://stackoverflow.com/questions/12742595/show-how-many-characters-remaining-in-a-html-text-box-using-javascript
+// textCounter keeps track of how many characters are typed into the message box by the user
 function textCounter(field,field2,maxlimit)
 {
  var countfield = document.getElementById(field2);
