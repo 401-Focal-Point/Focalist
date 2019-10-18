@@ -54,7 +54,7 @@ To view and try out the app, head over to our deployed site on Heroku: [FocaList
 ```
 curl -s [the-application-url]/api/schedule
 ```
-6. To check your heorku postgres database, run the following command in your terminal:
+6. To check your Heroku postgres database, run the following command in your terminal:
 ```
 $ heroku pg:psql
 ```
