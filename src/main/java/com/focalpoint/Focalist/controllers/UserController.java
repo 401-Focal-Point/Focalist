@@ -67,8 +67,6 @@ public class UserController {
         }
     }
 
-
-
     // Go to userAccount page
     @GetMapping("/userAccount")
     public String getUserAccount(Principal p, Model m) {
@@ -90,7 +88,6 @@ public class UserController {
                 uncompletedTasks.add(task);
             }
         }
-//        m.addAttribute("sortedMessages", userTasks);
         m.addAttribute("uncompletedTasks", uncompletedTasks);
         m.addAttribute("completedTasks", completedTasks);
         return "userAccount";
