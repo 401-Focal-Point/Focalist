@@ -7,21 +7,11 @@
 <body>
 <section th:fragment="nav">
     <nav id="nav" class="navbar navbar-dark">
-        <a class="navbar-brand" href="/"><img id="logo" src="./assets/logo.png"></a>
+        <a class="navbar-brand" href="/"><img id="logo" src="./img/logo.png"></a>
             <span th:if="${name}" class="navbar-text" id="nav-span" >
                 Hello, [[${name}]]! <a href="/logout">Logout</a>
             </span>
         </div>
-    </nav>
-
-<!--        //TODO change to showing persons first name-->
-<!--        <h1></h1>-->
-
-
-
-    <!-- if person is new or needs to login -->
-    <nav >
-
     </nav>
 </section>
 </body>

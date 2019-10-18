@@ -12,7 +12,7 @@ public class TwilioInitializer {
     @Autowired
     public TwilioInitializer(TwilioConfiguration twilioConfiguration) {
         this.twilioConfiguration = twilioConfiguration;
-        // establish connection to Twilio API for our account
+        // establish connection between our backend adn Twilio API for our account
         Twilio.init(
             twilioConfiguration.getAccountSid(),
             twilioConfiguration.getAuthToken());

@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
+// Defines what an user object should contains within the database
 @Entity
 public class ApplicationUser implements UserDetails {
     @Id
@@ -19,6 +20,7 @@ public class ApplicationUser implements UserDetails {
     String email;
     String username;
 
+    // One user can have many tasks to complete
     @OneToMany(mappedBy = "applicationUser")
     List<Task> tasks;
 

@@ -2,7 +2,8 @@ package com.focalpoint.Focalist.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-// This class defines what our text message request will look like
+// This class defines what our text message request object will look like
+// This object will be passed into smsService to send to Twilio
 public class SmsRequest {
 
     private final String phoneNumber;
