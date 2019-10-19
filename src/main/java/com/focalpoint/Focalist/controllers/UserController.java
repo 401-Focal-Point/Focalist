@@ -27,12 +27,7 @@ public class UserController {
 
     @Autowired
     ApplicationUserRepository applicationUserRepository;
-
-    // Go to signup page
-    @GetMapping("/signup")
-    public String getSignupPage() {
-        return "signup";
-    }
+    
 
     // Receives data from form that gets new user data
     @PostMapping("/signup")
