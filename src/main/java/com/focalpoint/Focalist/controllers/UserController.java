@@ -27,7 +27,6 @@ public class UserController {
 
     @Autowired
     ApplicationUserRepository applicationUserRepository;
-    
 
     // Receives data from form that gets new user data
     @PostMapping("/signup")

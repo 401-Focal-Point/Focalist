@@ -68,24 +68,13 @@ public class ApplicationUser implements UserDetails {
         return true;
     }
 
-    public long getId() {
-        return id;
-    }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public List<Task> getTasks() {
