@@ -17,13 +17,17 @@ public class TwilioSmsSender implements SmsSender {
     @Override
     public void sendSms(SmsRequest smsRequest) {
         if (isPhoneNumberValid(smsRequest.getPhoneNumber())) {
+            // Cell phone number message will go to
             PhoneNumber to = new PhoneNumber(smsRequest.getPhoneNumber());
+            // phone number from is a number supplied by Twilio at account setup
             PhoneNumber from = new PhoneNumber(twilioConfiguration.getTrialNumber());
             String message = smsRequest.getMessage();
             MessageCreator creator = Message.creator(to, from, message);
             creator.create();
         } else {
-            throw new IllegalArgumentException(String.format("The phone number %s is invalid", smsRequest.getPhoneNumber()));
+            throw new IllegalArgumentException(String.format(
+                    "The phone number %s is invalid",
+                    smsRequest.getPhoneNumber()));
         }
     }
 

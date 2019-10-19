@@ -25,11 +25,13 @@ public class TaskController {
     @PostMapping("/api/task")
     public RedirectView addTask(String title, String note, String time, String offset, Principal p) {
         ApplicationUser currentUser = applicationUserRepository.findByUsername(p.getName());
+        // Create date that is in UTC time, and a date in local time
         DateTime taskTime = DateTime.parse(time);
         int offsetHours = Integer.parseInt(offset);
         DateTime taskTimeUtc = taskTime.plusHours(offsetHours);
         Date taskUtcTime = taskTimeUtc.toDate();
         Date taskTimeLocal = taskTime.toDate();
+        // New Task includes UTC time and Local time
         Task newTask = new Task(title, note, taskUtcTime, taskTimeLocal, currentUser);
         taskRepository.save(newTask);
         return new RedirectView("/userAccount");

@@ -67,8 +67,6 @@ public class UserController {
         }
     }
 
-
-
     // Go to userAccount page
     @GetMapping("/userAccount")
     public String getUserAccount(Principal p, Model m) {
@@ -83,6 +81,7 @@ public class UserController {
         List<Task> uncompletedTasks = new LinkedList<>();
         List<Task> completedTasks = new LinkedList<>();
 
+        // split the sorted tasks into two list, one for uncompleted and one for completed
         for (Task task: userTasks) {
             if (task.isCompleted()) {
                 completedTasks.add(task);
@@ -90,7 +89,6 @@ public class UserController {
                 uncompletedTasks.add(task);
             }
         }
-//        m.addAttribute("sortedMessages", userTasks);
         m.addAttribute("uncompletedTasks", uncompletedTasks);
         m.addAttribute("completedTasks", completedTasks);
         return "userAccount";
