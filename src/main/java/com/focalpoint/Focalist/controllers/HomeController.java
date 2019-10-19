@@ -18,6 +18,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String getHome(Principal p, Model m) {
+        // Checking if the user is signed in or is a new user so that front end display accordingly
         if (p != null) {
             ApplicationUser user = applicationUserRepository.findByUsername(p.getName());
             m.addAttribute("name", user.getFirstName());

@@ -75,6 +75,7 @@ public class UserController {
         List<Task> uncompletedTasks = new LinkedList<>();
         List<Task> completedTasks = new LinkedList<>();
 
+        // split the sorted tasks into two list, one for uncompleted and one for completed
         for (Task task: userTasks) {
             if (task.isCompleted()) {
                 completedTasks.add(task);
