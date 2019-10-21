@@ -45,7 +45,6 @@ public class UserController {
 
         if (applicationUserRepository.findByUsername(email) == null) {
             // save newUser to database focalist
-            System.out.println("Got in");
             applicationUserRepository.save(newUser);
 
             // allow autologin after signing up for an account
