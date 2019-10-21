@@ -30,7 +30,6 @@ public class   SchedulerController {
         System.out.println(currentServerTime);
         Date currentServerTimePlusClockProcessInterval = DateTime.now().plusMinutes(10).toDate();
 
-//       TODO:make a string builder to concatenate multiple task that need to be sent at one time.
         for (Task task: tasks) {
             System.out.println("Got in task");
             Date taskTime = task.getUtcTime();
