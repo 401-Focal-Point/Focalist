@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <div th:replace="fragments/csshead :: css"></div>
-    <title>Title</title>
+    <!-- Please use a real title! This is sloppy. -->
+    <title>User Account</title>
 </head>
 
 <body>
@@ -22,6 +23,7 @@
 
                         <input required type="text" name="title" placeholder="Message Title" onkeyup="textCounter(this,'counter',65);"
                                class="form-control form-control-lg my-2">
+                        <!-- Yeah, you don't have anything with an id of 'counter', so I'm not sure how this code is supposed to work. Feels like a grab from stackoverflow that never worked. -->
                         <textarea required name="note" placeholder="Note *804 char max " onkeyup="textCounter(this,'counter',804);" id="message"
                                   class="form-control form-control-lg my-2"></textarea>
                         <input required type="datetime-local" name="time" placeholder="Reminder Time"
@@ -48,10 +50,12 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-                        // TODO: make bottom margin equals to the margin of the add task form
+                        <!-- TODO: make bottom margin equals to the margin of the add task form -->
+                        <!-- remember that you're in HTML and comments work differently! -->
                         <h2 class="my-4"><span class="theme">Reminders</span> Currently Scheduled </h2>
                         <!-- starting code for collapsible from: https://getbootstrap.com/docs/4.3/components/collapse/ -->
-                        <div class="accordion" id="accordionMessage" th:each="task : ${uncompletedTasks}">
+                        <!-- The two accordions should have different IDs from each other. -->
+                        <div class="accordion" id="accordionScheduled" th:each="task : ${uncompletedTasks}">
                             <div class="card">
                                 <div class="card-header" th:id="${task.id}">
                                     <h2 class="mb-0">
@@ -63,7 +67,7 @@
                                     </h2>
                                 </div>
                                 <div th:id="${'collapse' + task.id}" class="collapse" th:aria-labelledby="${task.id}"
-                                    data-parent="#accordionMessage">
+                                    data-parent="#accordionScheduled">
                                     <div class="card-body">
                                         <p>Title: [[${task.title}]]</p>
                                         <p>Message: [[${task.note}]]</p>

@@ -15,12 +15,16 @@ public class SchedulerController {
     @Autowired
     TaskRepository taskRepository;
 
+    // unnecessary, can be removed
     @Autowired
     ApplicationUserRepository applicationUserRepository;
 
     @Autowired
     SmsService smsService;
 
+    // This shouldn't be a get request (get requests shouldn't do anything to change your data or send messages),
+    // and you should probably also have some sort of security so that your average user can't just visit /api/schedule
+    // and make all the text messages go out. For instance, you could require an "auth key" here, a random long string that you include in your curl request.
     @GetMapping("/api/schedule")
     public void scheduleMessage () {
         // get all of the tasks in a list that are not completed ordered by utc_time in ascending order
@@ -34,7 +38,14 @@ public class SchedulerController {
         // If not, break out of the loop since the rest of the tasks won't be within the next 10 minutes as well
         for (Task task: tasks) {
             Date taskTime = task.getUtcTime();
-            if ((taskTime.after(currentServerTime) && taskTime.before(currentServerTimePlusClockProcessInterval)) || taskTime.before(currentServerTime)) {
+            // so this says... if after now and before soon, or if before now
+            // that can be simplified to just "before soon"
+            // timeline view:
+            //     before now|after now and before soon|after soon
+            //    <==========*=========================*------->
+            //               now                      soon
+            //    so that's all times before soon
+            if (taskTime.before(currentServerTimePlusClockProcessInterval)) {
                 SmsRequest newMessage = new SmsRequest(task.getApplicationUser().getPhoneNumber(), task.toString());
                 smsService.sendSms(newMessage);
                 task.setCompleted(true);

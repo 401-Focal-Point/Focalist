@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "twilio")
 public class TwilioConfiguration {
+    // Since these are all class variables now, it doesn't make a lot of sense
+    // that their getters and setters are all instance methods. You could make
+    // them public variables instead, and not need to autowire in an instance at all.
     private static String accountSid;
     private static String authToken;
     private static String trialNumber;

@@ -39,6 +39,8 @@ public class UserController {
         // create newUser and salt & hash password
         ApplicationUser newUser = new ApplicationUser(firstName,
                                                     lastName,
+                // so brittle! If the user typed in the "1", it'll break!
+                // better to do a tiny bit of regex here to ensure consistency.
                                                     "+1" + phoneNumber,
                                                     passwordEncoder.encode(password),
                                                     email);
@@ -67,6 +69,7 @@ public class UserController {
         m.addAttribute("name", currentUser.getFirstName());
         m.addAttribute("user", currentUser);
 
+        // I like that you're doing this logic in your controller instead of your view.
         // sort messages by time in displayed messages
         List<Task> userTasks = currentUser.getTasks();
         userTasks.sort(Comparator.comparing(Task::getUtcTime));

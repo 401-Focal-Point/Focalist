@@ -17,6 +17,9 @@ public class ApplicationUserTest {
     public void getFirstName() throws IllegalAccessException, NoSuchFieldException {
         final ApplicationUser testUser = new ApplicationUser();
         final Field field = testUser.getClass().getDeclaredField("firstName");
+        // Interesting... for this all I needed you to do was call the setter and getter on firstName,
+        // or to pass a firstName into the constructor and assert that it was saved successfully!
+        // This stuff with Field is cool, but not the most useful sort of test.
         field.setAccessible(true);
         field.set(testUser, "Peter Piper");
 
@@ -39,6 +42,7 @@ public class ApplicationUserTest {
     }
 
 
+    // missing some tests here, as well as tests on the Twilio configuration.
 //    @Test
 //    public void getTasks() {
 //
