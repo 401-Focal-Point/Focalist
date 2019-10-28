@@ -1,5 +1,6 @@
 # Getting Started
 
+<!-- Leftover Gradle getting started guide... not sure you really need this in your app -->
 ### Reference Documentation
 For further reference, please consider the following sections:
 
