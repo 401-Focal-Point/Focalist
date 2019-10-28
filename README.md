@@ -60,6 +60,8 @@ $ heroku pg:psql
 ```
 
 # References
+
+<!-- Thank you for these references! I was really concerned about where some of your Twilio code came from. -->
 - [Spring Boot - How to send sms using Twilio API (2019)](https://www.youtube.com/watch?v=OuBttmaPlhM)
 - [Appointment Reminders with Java and Spark](https://www.twilio.com/docs/sms/tutorials/appointment-reminders-java-spark)
 
