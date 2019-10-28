@@ -23,6 +23,7 @@
 
                         <input required type="text" name="title" placeholder="Message Title" onkeyup="textCounter(this,'counter',65);"
                                class="form-control form-control-lg my-2">
+                        <!-- Yeah, you don't have anything with an id of 'counter', so I'm not sure how this code is supposed to work. Feels like a grab from stackoverflow that never worked. -->
                         <textarea required name="note" placeholder="Note *804 char max " onkeyup="textCounter(this,'counter',804);" id="message"
                                   class="form-control form-control-lg my-2"></textarea>
                         <input required type="datetime-local" name="time" placeholder="Reminder Time"
